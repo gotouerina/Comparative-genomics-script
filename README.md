@@ -1,3 +1,3 @@
 # whole_genome
 
-perl <fasta> <filter_file>
+#Usage perl <fasta> <filter_file>
