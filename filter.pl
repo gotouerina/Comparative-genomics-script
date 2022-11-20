@@ -1,4 +1,4 @@
-#usage perl <fasta> <filter_file>
+#usage perl filter.pl <fasta> <filter_file>
 #created by kogoori masaki
 use warnings;
 open($I,"<$ARGV[0]")  or die "No input fasta file!!\n"."Usage :perl filter.pl <fasta> <filter_file>; ";
