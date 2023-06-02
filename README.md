@@ -44,15 +44,13 @@ Usage
 
 Psg_count.pl realx_count.pl are used for extract messages from hyphy output file.
 
-RNAanalysis need SRA file downloaded from NCBI and analysis by stringtie/prepDE.py
-
-Stringtie : https://github.com/gpertea/stringtie
-
 hyphy: https://github.com/veg/hyphy
 
  #  RNA analysis (转录组分析)
  
- Prepare rna SRA data from NCBI.
+ RNAanalysis need SRA file downloaded from NCBI and analysis by stringtie/prepDE.py
+
+ Stringtie : https://github.com/gpertea/stringtie
  
  ## 01.Alignment（比对）
  
