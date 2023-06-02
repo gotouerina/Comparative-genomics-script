@@ -52,6 +52,10 @@ hyphy: https://github.com/veg/hyphy
 
  #  RNA analysis (转录组分析)
  
+ Prepare rna SRA data from NCBI.
  
+ ## 01.Alignment（比对）
+ 
+ ## 02.Stringtie
 
 
