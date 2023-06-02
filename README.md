@@ -46,7 +46,7 @@ The uncode region filter script filter.pl
 
 Usage 
 
-    perl filter.pl [fasta] [filter_file]
+        perl filter.pl [fasta] [filter_file]
 
 ## 07.PSG
 
@@ -59,7 +59,7 @@ hyphy: https://github.com/veg/hyphy
  #  RNA analysis (转录组分析)
  
  RNAanalysis need SRA file downloaded from NCBI and analysis by stringtie/prepDE.py
-
+ 
  Stringtie : https://github.com/gpertea/stringtie
  
  ## 01.Alignment（比对）
