@@ -24,12 +24,22 @@ Asuming you have 3 genomes, you should choose a ref FASTA Format genome and 2 qu
 So you can get 2 MAF FORMAT files.
 
 ## 02.Rename (重命名)
-
+        
+        perl maf.rename.species.S.pl $sp1.filter.maf $sp1 $sp1.last.maf >$sp1.rename.maf
+        perl maf.rename.species.S.pl $sp2.filter.maf $sp2 $sp2.last.maf >$sp2.rename.maf
+               
 ## 03.Multiz (合并)
+
+        ## multiz合并maf(>3个query根据系统发育关系按顺序合并)
+        multiz M=1 $sp1.rename.maf $sp2.rename.maf 0 U1 U2 > $sp1-$sp2.ma        
 
 ## 04.MAF2LST
 
+        perl 01.convertMaf2List.pl $sp1-$sp2.maf $sp1-$sp2 $sp_ref $sp1,$sp2
+
 ## 05.Catch gene regions
+
+        perl 02.lst2gene.pl $sp1-$sp2 $gff
 
 ## 06.Uncode Region Filter（去除密码子区域）
 The uncode region filter script filter.pl
