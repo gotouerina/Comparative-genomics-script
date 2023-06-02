@@ -23,14 +23,26 @@ Asuming you have 3 genomes, you should choose a ref FASTA Format genome and 2 qu
         
 So you can get 2 MAF FORMAT files.
 
-## Uncode Region Filter（去除密码子区域）
+## 02.Rename (重命名)
+
+## 03.Multiz (合并)
+
+## 04.MAF2LST
+
+## 05.Catch gene regions
+
+## 06.Uncode Region Filter（去除密码子区域）
 The uncode region filter script filter.pl
 
 Usage 
 
     perl filter.pl [fasta] [filter_file]
 
-And Psg_count.pl realx_count.pl are used for extract messages from hyphy output file.
+## 07.PSG
+
+## 08.RELAX
+
+Psg_count.pl realx_count.pl are used for extract messages from hyphy output file.
 
 RNAanalysis need SRA file downloaded from NCBI and analysis by stringtie/prepDE.py
 
