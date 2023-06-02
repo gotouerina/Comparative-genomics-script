@@ -1,4 +1,4 @@
-# whole_genome and RNA analysis
+# Whole Genome analysis
 
 The uncode region filter script filter.pl
 
@@ -13,5 +13,9 @@ RNAanalysis need SRA file downloaded from NCBI and analysis by stringtie/prepDE.
 Stringtie : https://github.com/gpertea/stringtie
 
 hyphy: https://github.com/veg/hyphy
+
+ #  RNA analysis (转录组分析)
+ 
+ 
 
 
