@@ -62,8 +62,18 @@ hyphy: https://github.com/veg/hyphy
  
  Stringtie : https://github.com/gpertea/stringtie
  
+ ## 00.filter
+ fastp default parameter
  ## 01.Alignment（比对）
- 
+
+                hisat2 -x ca -p 8 -1 ${f}_clean_1.fastq.gz -2 ${f}_clean_2.fastq.gz  -S ${f}.sam
+                samtools view -@ 16 -b -S ${f}.sam -o ${f}.bam
+                samtools sort ${f}.bam > ${f}.sort.bam
+                ## rm ${f}.bam ${f}.sam 
+                 
  ## 02.Stringtie
 
+                ##mkdir N1
+                stringtie-2.2.1.Linux_x86_64/stringtie  -G $gtf -o ./N1/${f}/${f}.gtf -e -B  -A ./N1/${f}/${f}.gene.tab N1
+/${f}.sort.bam
 
