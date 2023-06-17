@@ -84,3 +84,6 @@ hyphy: https://github.com/veg/hyphy
         ## mkdir N1
         stringtie-2.2.1.Linux_x86_64/stringtie  -G $gtf -o ./N1/${f}/${f}.gtf -e -B  -A ./N1/${f}/${f}.gene.tab N1/${f}.sort.bam
 
+# SD counts
+
+use biser
