@@ -11,12 +11,15 @@ Lastal was used to align. Install:
 Asuming you have 3 genomes, you should choose a ref FASTA Format genome and 2 query genome:
 
         ##参考建库
+        
         lastdb -P8 -uMAM8 myDB $ref
         ##第一个Query比对参考
+        
         last-train -P40 --revsym -E0.05 -C2 myDB $query1 >$sp1.train
         lastal -k32 -p $sp1.train myDB $query1 | last-split -fMAF+ >$sp1.maf
         maf-swap $sp1.maf |last-split |maf-swap |maf-sort > $sp1.filter.maf
         ##第二个query比对参考
+        
         last-train -P40 --revsym -E0.05 -C2 myDB $query2 >$sp2.train
         lastal -k32 -p $sp2.train myDB $query2 | last-split -fMAF+ >$sp2.maf
         maf-swap $sp2.maf |last-split |maf-swap |maf-sort > $sp2.filter.maf
