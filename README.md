@@ -91,7 +91,10 @@ hyphy: https://github.com/veg/hyphy
 
 # SD counts
 
-use biser
+Using biser : https://github.com/0xTCG/biser
+
+                pip install biser
+                biser -o <output> -t <threads> <genome.fa>
 
 # Software WGSP for analysis
 
