@@ -87,3 +87,14 @@ hyphy: https://github.com/veg/hyphy
 # SD counts
 
 use biser
+
+# Software WGSP for analysis
+
+install :
+
+                wget https://github.com/gotouerina/Comparative-genomics-script/releases/download/v2.0/WGSP-Base.zip
+                unzip WGSP-Base.zip; cd WGSP-Base
+                perl  Makefile.PL;
+                make
+
+Manual is still updated.
