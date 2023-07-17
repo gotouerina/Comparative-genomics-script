@@ -56,7 +56,7 @@ Usage
 ## 07.PSG
         hyphy absrel --alignment genes/evm.model.Contig11.1.fa.filter \
         --tree genes/evm.model.Contig11.1.fa.filter.treefile.tree.nwk \
-        --test Foreground \
+        --branches Foreground \
         -output genes/evvm.model.Contig11.1.fa.filter.result
 ## 08.RELAX
         hyphy relax --alignment  genes/evm.model.Contig11.1.fa.filter \
