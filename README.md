@@ -53,18 +53,31 @@ Usage
 
         perl filter.pl [fasta] [filter_file]
 
-## 07.PSG
+## 07.contruct tree + root tree + label tree
+
+        for i in genes/*.filter; do echo -e "iqtree -s $i" >> iqtree.sh; done
+        for i in genes/*.treefile; do echo -e "nw_reroot  $i  imhausi > $i.nwk" >> reroot.sh; done
+        for i in genes/*.nwk; do echo -e "hyphy label-tree.bf --tree $i --list chr.list --output $i.label" >> label.sh ;done
+
+## 08.PSG(absrel)
         hyphy absrel --alignment genes/evm.model.Contig11.1.fa.filter \
         --tree genes/evm.model.Contig11.1.fa.filter.treefile.tree.nwk \
         --branches Foreground \
         -output genes/evvm.model.Contig11.1.fa.filter.result
-## 08.RELAX
+
+## 09.PSG(busted)
+        hyphy busted --alignment genes/evm.model.Contig11.1.fa.filter \
+        --tree genes/evm.model.Contig11.1.fa.filter.treefile.tree.nwk \
+        --branches Foreground \
+        -output genes/evvm.model.Contig11.1.fa.filter.result
+## 10.RELAX
         hyphy relax --alignment  genes/evm.model.Contig11.1.fa.filter \
         --test Foreground \
         --tree genes/evm.model.Contig11.1.fa.filter.treefile.tree.nwk \
         --output genes/evm.model.Contig11.1.fa.filter.relax
 
 ## Scripts
+
 Psg_count.pl realx_count.pl are used for extract messages from hyphy output file.
 
 hyphy: https://github.com/veg/hyphy
