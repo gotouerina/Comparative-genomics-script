@@ -119,3 +119,57 @@ install :
                 make
 
 Manual is still need updated.
+
+
+#        CNE estimator
+
+Software : CLAPACK and PHAST, mafSplit、wigToBigWig and bigWigAverageOverBed
+
+ClAPAC download :
+
+                wget http://www.netlib.org/clapack/clapack.tgz
+                tar zxf clapack.tgz
+                cd CLAPACK-3.2.1/
+                cp make.inc.example make.inc && make f2clib && make blaslib && make lib
+
+PHAST download:
+
+                wget https://github.com/CshlSiepelLab/phast/archive/v1.5.tar.gz
+                tar zxf v1.5.tar.gz
+                cd phast-1.5/src/
+                make CLAPACKPATH=/path/CLAPACK-3.2.1
+
+Others:
+
+                wget https://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/mafSplit
+                wget https://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/wigToBigWig
+                wget https://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/bigWigAverageOverBed
+                chmod +x *
+
+
+CNE保守性是MAF下游分析。假设已有MAF文件,这一步生成模型文件phyloFit.mod
+
+                phyloFit -i MAF $MAF_FILE（如果大于三个物种需要提供物种树）
+                phyloFit -i MAF $MAF_FILE --tree $TREE
+
+切分MAF：
+
+                mafSplit _.bed maf/  $MAF_FILE -byTarget -useFullSequenceName
+
+MAF位点排序：
+
+                maf-sort $MAF_FILE > $MAF_SORT>FILE
+
+PHAST保守性计算，以染色体LG19.maf为例
+
+                 phastCons LG19.maf phyloFit.mod --target-coverage 0.25 --expected-length 12 --rho 0.4 --msa-format MAF --seqname cahirinus.LG19 --most-conserved bed/LG19.bed > wig/LG19.wig; done
+
+the bed file and wig file are result file.
+
+保守元件去掉编码区的之后，就得到了保守的非编码元件（Conserved noncoding DNA elements，CNEs）
+
+
+                
+
+
+
