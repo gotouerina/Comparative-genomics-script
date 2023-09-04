@@ -167,6 +167,21 @@ PHAST保守性计算，以染色体LG19.maf为例
 the bed file and wig file are result file.
 
 保守元件去掉编码区的之后，就得到了保守的非编码元件（Conserved noncoding DNA elements，CNEs）
+根据注释提取CDS和基因:
+
+              for i in *.bed ; do cat $i | sed 's/cahirinus\.//g' > $i.bed2 ; done
+              for i in LG{01..19}; do grep "$i" cishu.gff > $i.bed; done
+              for i in *.bed ; do cat $i | grep "CDS " | awk '{OFS="\t"; print $1,$4,$5,$9 }' > $i.bed3 ; done
+              for i in *.bed ; do cat $i | grep "gene " | awk '{OFS="\t"; print $1,$4,$5,$9 }' > $i.bed3 ; done
+
+
+根据注释过滤：
+
+                bedtools subtract  -a $i.bed.bed2 -b $i.bed.bed3 
+
+寻找最近的基因：
+
+                bedtools closest  -a $i.CNE.bed -b $i.bed.bed4
 
 
                 
