@@ -184,6 +184,17 @@ the bed file and wig file are result file.
                 bedtools closest  -a $i.CNE.bed -b $i.bed.bed4
 
 
+#        WGDI(Karyotype Evolution)
+
+仅适用于动物，无多倍化情况的简单分析
+
+1.祖先核型推断
+
+Dotplot -> ancestral_karyotype -> BLASTP -> colinear -> blocksinfo -> correspondence > karyotype mapping -> karyotype
+
+2.建立系统发育树
+
+Blastp -> collinearity -> blockinfo -> correspondence -> alignment (注意blockinfo_reverse = true对齐) -> alignmenttrees
                 
 
 
