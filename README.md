@@ -188,13 +188,26 @@ the bed file and wig file are result file.
 
 仅适用于动物，无多倍化情况的简单分析
 
-1.祖先核型推断
+##        0. 数据准备
+去除基因组和注释中的Contig，然后
+
+                gffread $gff  -g $ref  -x cds.fa -y pep.fa ##提取CDS和PEP
+                python WGDIpre.py $ref $gff
+                python 03.seq_newname.py output.gff cds.fa cds.rename.fa
+                python 03.seq_newname.py output.gff pep.fa pep.rename.fa
+ 
+##        1.祖先核型推断
 
 Dotplot -> ancestral_karyotype -> BLASTP -> colinear -> blocksinfo -> correspondence > karyotype mapping -> karyotype
 
-2.建立系统发育树
+##        2.建立系统发育树
 
 Blastp -> collinearity -> blockinfo -> correspondence -> alignment (注意blockinfo_reverse = true对齐) -> alignmenttrees
+
+##        3.共享融合位点验证
+
+Blastp -> collinearity -> blockinfo -> correspondence -> polyploidy classification -> shared_fusion
+
                 
 
 
