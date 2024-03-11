@@ -1,5 +1,7 @@
 分析流程已迁移至WIKI，详见 https://github.com/gotouerina/Comparative-genomics-script/wiki
 
+WGSP is determined to be a genomic alignment tools and is under development.
+
 # Software WGSP for analysis
 
 install :
