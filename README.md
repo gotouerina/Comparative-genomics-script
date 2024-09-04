@@ -30,7 +30,6 @@ cactus需要配置文件，第一行为定根过的系统发育树；第二行�
 例：
 
     (Sorex:0.0544,(Uropsilus:0.07434,(Condylura:0.06856,((((Urotrichus:0.01627,Dymecodon:0.01474):0.04239,Scaptonyx:0.05570):0.00322,((Toccidentalis:0.00592,Teuropaea:0.00685):0.02124,((((Scaptochirus:0.00304,Scapanulus:0.00348):0.01420,Parascaptor:0.01605):0.00210,Euroscaptor:0.01915):0.00302,Mogera:0.02491):0.00933):0.02453):0.00061,(Galemys:0.06160,(((Scapanus:0.00190,Neurotrichus:0.00162):0.01527,Scalopus:0.02044):0.01619,Parascalops:0.03749):0.02099):0.00061):0.00092):0.01560):0.0544);
-
     Condylura       Condylura_cristata.rename.fa
     Dymecodon       Dymecodon.softmask.fa
     Euroscaptor     Euroscaptor.softmask.fa
