@@ -63,6 +63,10 @@ cactus需要配置文件，第一行为定根过的系统发育树；第二行�
 
 旧分析流程已迁移至WIKI，详见 https://github.com/gotouerina/Comparative-genomics-script/wiki
 
+## 提取指定物种
+
+ ~/Repeat/UCSCtools/mafSpeciesSubset Acomys.filter.maf species.lst Only_Acomys.filter.maf 
+
 
 
 
